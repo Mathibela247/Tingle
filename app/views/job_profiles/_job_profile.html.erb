@@ -1,0 +1,52 @@
+<div id="<%= dom_id job_profile %>">
+  <p class="my-5">
+    <strong class="block font-medium mb-1">Post title:</strong>
+    <%= job_profile.post_title_id %>
+  </p>
+
+  <p class="my-5">
+    <strong class="block font-medium mb-1">Core:</strong>
+    <%= job_profile.core %>
+  </p>
+
+  <p class="my-5">
+    <strong class="block font-medium mb-1">Salary level:</strong>
+    <%= job_profile.salary_level_id %>
+  </p>
+
+  <p class="my-5">
+    <strong class="block font-medium mb-1">Post:</strong>
+    <%= job_profile.post_id %>
+  </p>
+
+  <p class="my-5">
+    <strong class="block font-medium mb-1">Location:</strong>
+    <%= job_profile.location %>
+  </p>
+
+  <p class="my-5">
+    <strong class="block font-medium mb-1">Job purpose:</strong>
+    <%= job_profile.job_purpose %>
+  </p>
+
+  <p class="my-5">
+    <strong class="block font-medium mb-1">Job function:</strong>
+    <%= job_profile.job_function %>
+  </p>
+
+  <p class="my-5">
+    <strong class="block font-medium mb-1">Designation:</strong>
+    <%= job_profile.designation %>
+  </p>
+
+  <p class="my-5">
+    <strong class="block font-medium mb-1">Organization:</strong>
+    <%= job_profile.organization_id %>
+  </p>
+
+  <% if action_name != "show" %>
+    <%= link_to "Show this job profile", job_profile, class: "rounded-lg py-3 px-5 bg-gray-100 inline-block font-medium" %>
+    <%= link_to 'Edit this job profile', edit_job_profile_path(job_profile), class: "rounded-lg py-3 ml-2 px-5 bg-gray-100 inline-block font-medium" %>
+    <hr class="mt-6">
+  <% end %>
+</div>

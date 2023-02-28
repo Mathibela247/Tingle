@@ -1,0 +1,23 @@
+
+
+<% if user_signed_in? %>
+ <%= render partial: "users/profile" %>
+<% else %>
+  <%= turbo_frame_tag "new-user" do %>
+    <%= link_to "Sign up", new_user_registration_path, class: "inline-block cursor-pointer rounded-md bg-gray-800 px-4 py-3 text-center text-sm font-semibold uppercase text-white transition duration-200 ease-in-out hover:bg-gray-900" %>
+  <% end %>
+  <%- if controller_name != 'sessions' %>
+      <%= link_to "Log in", new_session_path(:user) %><br />
+    <% end %>
+<% end %>
+<p></p>
+<div class="container">
+
+Json here:  <%= @application.as_json %>
+  <ul>
+    <li><%= link_to "Web Posts", posts_path %></li>
+    <li><%= link_to "API V1 Posts", api_v1_posts_path %></li>
+    <li><%= link_to "API V1 Android Posts", api_v1_android_posts_path %></li>
+  </ul>
+</div>
+
